@@ -1,7 +1,7 @@
 [package]
 name = "linbra"
 description = "Easily do linear algebra in game development, graphics and other sort of calculations using vectors and matrices"
-author = ["Antonin Hérault <antonherault@gmail.com>"]
+authors = ["Antonin Hérault <antonherault@gmail.com>"]
 version = "0.1.0"
 edition = "2021"
 license = "MIT"
