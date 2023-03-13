@@ -7,6 +7,8 @@
 
 use std::ops;
 
+use crate::Zero;
+
 /// Vector with a fixed-length of 2.
 pub type Vector2<T> = Vector<T, 2>;
 /// Vector with a fixed-length of 3.
@@ -83,7 +85,7 @@ impl<T, const N: usize> From<[T; N]> for Vector<T, N> {
     }
 }
 
-/// Implements the index operator for vectors.
+/// Returns the value at index `n` in the vector.
 /// 
 /// ## Usage
 /// ```
@@ -93,7 +95,7 @@ impl<T, const N: usize> From<[T; N]> for Vector<T, N> {
 /// let red = colour[0];
 /// assert_eq!(red, 255);
 /// ```
-/// This project provides a way to manage [`colours`](crate::colours).
+/// Note this project provides a way to manage [`colours`](crate::colours).
 impl<T, const N: usize> ops::Index<usize> for Vector<T, N> {
     type Output = T;
 
@@ -102,11 +104,39 @@ impl<T, const N: usize> ops::Index<usize> for Vector<T, N> {
     }
 }
 
+/// Returns the value at index `n` in the vector, as mutable.
+/// 
+/// ## Usage
+/// ```
+/// use linbra::vectors::{ Vector, Vector3 };
+/// 
+/// let colour: Vector3<u8> = Vector::new([255, 100, 100]);
+/// colour[0] = 100;
+/// assert_eq!(colour[0], 100);
+/// ```
+/// Note this project provides a way to manage [`colours`](crate::colours).
+impl<T, const N: usize> ops::IndexMut<usize> for Vector<T, N> {
+    fn index_mut(&mut self, index: usize) -> &mut Self::Output {
+        &mut self.data[index]
+    }
+}
+
 impl<T, const N: usize> Vector<T, N> {
     /// Creates a new vector.
     pub fn new(data: [T; N]) -> Self {
+        Self { data }
+    }
+}
+
+/// Implements a constructor filling the vector with zeros for types 
+/// implementing the [`Zero`] trait.
+/// 
+/// All number-primitive types implement [`Zero`].
+impl<T: Zero, const N: usize> Vector<T, N> {
+    /// Creates a new vector filled with zeros.
+    pub fn zeroed() -> Self {
         Self {
-            data,
+            data: [T::zero(); N]
         }
     }
 }

@@ -9,7 +9,7 @@ use std::ops;
 use crate::vectors::{Vector3, Vector4};
 
 /// Implements functions to retrieve the red, blue and green channels of a 
-/// colour.
+/// colour
 pub trait RGB: ops::Index<usize, Output = u8> {
     /// Returns the red channel being the first element of the data structure.
     fn r(&self) -> u8 {
@@ -28,11 +28,11 @@ pub trait RGB: ops::Index<usize, Output = u8> {
     }
 }
 
-/// Implements the [`RGB`] trait for vectors of three `u8` values.  
+/// Implements the [`RGB`] trait for 3-vectors of `u8` values.  
 impl RGB for Vector3<u8> {}
 
-/// Implements the [`RGB`] trait for vectors of four `u8` values to let the 
-/// implementation of the [`RGBA`] trait possible.  
+/// Implements the [`RGB`] trait for 4-vectors of `u8` values to let the 
+/// implementation of the [`RGBA`] trait possible.
 impl RGB for Vector4<u8> {}
 
 /// Implements a named constructor for RGB structures.
@@ -42,7 +42,7 @@ impl Vector3<u8> {
     }
 }
 
-/// Creates a vector 3 of `u8` from an hexadecimal value as `#RRGGBB`.
+/// Creates a 3-vector of `u8` from an hexadecimal value as `#RRGGBB`.
 /// 
 /// ## Example
 /// ```
@@ -69,7 +69,7 @@ impl From<u32> for Vector3<u8> {
     }
 }
 
-/// Creates an hexadecimal value as `#RRGGBB` from a vector 3 of `u8`.
+/// Creates an hexadecimal value as `#RRGGBB` from a 3-vector of `u8`.
 /// 
 /// ## Example
 /// ```
@@ -98,9 +98,9 @@ pub trait RGBA: RGB {
     }
 }
 
-/// Implements the [`RGBA`] for vectors of four `u8` values. 
+/// Implements the [`RGBA`] for 4-vectors of `u8` values. 
 /// 
-/// The [`RGB`] trait is also implemented for vectors of four in this module. 
+/// The [`RGB`] trait is also implemented for 4-vectors in this module. 
 impl RGBA for Vector4<u8> {}
 
 /// Implements a named constructor for RGBA structures.
@@ -110,7 +110,7 @@ impl Vector4<u8> {
     }
 }
 
-/// Creates a vector 4 of `u8` from an hexadecimal value like `#RRGGBBAA`.
+/// Creates a 4-vector of `u8` from an hexadecimal value like `#RRGGBBAA`.
 /// 
 /// ## Example
 /// ```
@@ -140,7 +140,7 @@ impl From<u32> for Vector4<u8> {
     }
 }
 
-/// Creates an hexadecimal value as `#RRGGBBAA` from a vector 4 of `u8`.
+/// Creates an hexadecimal value as `#RRGGBBAA` from a 4-vector of `u8`.
 /// 
 /// ## Example
 /// ```
