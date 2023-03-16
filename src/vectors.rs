@@ -5,7 +5,7 @@
 //! Fixed-size vector and easy-types for different usually used vectors with 
 //! into/from implementations on relevant primitives types.
 
-use std::ops;
+use std::{ops, array::IntoIter};
 
 use crate::Zero;
 
@@ -110,7 +110,7 @@ impl<T, const N: usize> ops::Index<usize> for Vector<T, N> {
 /// ```
 /// use linbra::vectors::{ Vector, Vector3 };
 /// 
-/// let colour: Vector3<u8> = Vector::new([255, 100, 100]);
+/// let mut colour: Vector3<u8> = Vector::new([255, 100, 100]);
 /// colour[0] = 100;
 /// assert_eq!(colour[0], 100);
 /// ```
@@ -125,6 +125,17 @@ impl<T, const N: usize> Vector<T, N> {
     /// Creates a new vector.
     pub fn new(data: [T; N]) -> Self {
         Self { data }
+    }
+}
+
+/// Implementations iteration on the vector by converting its data array into 
+/// an iterator.
+impl<T, const N: usize> IntoIterator for Vector<T, N> {
+    type Item = T;
+    type IntoIter = IntoIter<T, N>;
+
+    fn into_iter(self) -> Self::IntoIter {
+        self.data.into_iter()
     }
 }
 
