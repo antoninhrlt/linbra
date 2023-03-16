@@ -12,6 +12,7 @@ use std::ops;
 
 pub mod colours;
 pub mod matrices;
+pub mod operations;
 pub mod points;
 pub mod vectors;
 
@@ -23,36 +24,43 @@ pub trait Zero: Copy {
     fn zero() -> Self;
 }
 
-macro_rules! impl_zero {
+/// Common properties to all the number-primitive types.
+/// 
+/// No function provided.
+pub trait Num
+where 
+    Self: ops::Add<Output = Self> 
+        + ops::Sub<Output = Self> 
+        + ops::AddAssign
+        + ops::SubAssign
+        + PartialEq 
+        + Copy 
+{}
+
+macro_rules! impl_primitive_numbers {
     ($type:tt, $zero:literal) => {
         impl Zero for $type {
             fn zero() -> Self {
                 $zero
             }
         }
+
+        impl Num for $type {}
     };
 }
 
-impl_zero!(i8, 0);
-impl_zero!(i16, 0);
-impl_zero!(i32, 0);
-impl_zero!(i64, 0);
+impl_primitive_numbers!(i8, 0);
+impl_primitive_numbers!(i16, 0);
+impl_primitive_numbers!(i32, 0);
+impl_primitive_numbers!(i64, 0);
 
-impl_zero!(u8, 0);
-impl_zero!(u16, 0);
-impl_zero!(u32, 0);
-impl_zero!(u64, 0);
+impl_primitive_numbers!(u8, 0);
+impl_primitive_numbers!(u16, 0);
+impl_primitive_numbers!(u32, 0);
+impl_primitive_numbers!(u64, 0);
 
-impl_zero!(isize, 0);
-impl_zero!(usize, 0);
+impl_primitive_numbers!(isize, 0);
+impl_primitive_numbers!(usize, 0);
 
-impl_zero!(f32, 0.0);
-impl_zero!(f64, 0.0);
-
-/// Common properties to all the number-primitive types.
-/// 
-/// No function provided.
-pub trait Num
-where 
-    Self: ops::Add<Output = Self> + ops::Sub<Output = Self> + PartialEq + Copy 
-{}
+impl_primitive_numbers!(f32, 0.0);
+impl_primitive_numbers!(f64, 0.0);
