@@ -8,3 +8,6 @@ license = "MIT"
 keywords = ["algebra", "graphics", "gamedev", "maths", "linear-algebra"]
 
 [dependencies]
+
+[package.metadata.docs.rs]
+rustdoc-args = [ "--html-in-header", "docs/katex.html" ]
