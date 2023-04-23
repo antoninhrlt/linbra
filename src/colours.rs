@@ -6,7 +6,7 @@
 //! vectors and the implements of these traits for vectors 3 and 4.
 
 use std::ops;
-use crate::vectors::{Vector3, Vector4};
+use crate::vector::{Vector3, Vector4};
 
 /// Implements functions to retrieve the red, blue and green channels of a 
 /// colour

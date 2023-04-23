@@ -7,7 +7,7 @@
 
 use std::ops;
 
-use crate::vectors::{Vector2, Vector3};
+use crate::vector::{Vector2, Vector3};
 
 /// Implements functions to retrieve vertical and horizontal positions of a 
 /// point in a 2d plan.
