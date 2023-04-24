@@ -11,10 +11,10 @@
 use std::ops;
 
 pub mod colours;
-pub mod matrices;
-pub mod operations;
+pub mod matrix;
+mod operations;
 pub mod points;
-pub mod vectors;
+pub mod vector;
 
 /// Implements a function to get the zero-value of the type.
 /// 
@@ -30,9 +30,11 @@ pub trait Zero: Copy {
 pub trait Num
 where 
     Self: ops::Add<Output = Self> 
-        + ops::Sub<Output = Self> 
+        + ops::Sub<Output = Self>
+        + ops::Mul<Output = Self> 
         + ops::AddAssign
         + ops::SubAssign
+        + ops::MulAssign
         + PartialEq 
         + Copy 
 {}
@@ -53,11 +55,13 @@ impl_primitive_numbers!(i8, 0);
 impl_primitive_numbers!(i16, 0);
 impl_primitive_numbers!(i32, 0);
 impl_primitive_numbers!(i64, 0);
+impl_primitive_numbers!(i128, 0);
 
 impl_primitive_numbers!(u8, 0);
 impl_primitive_numbers!(u16, 0);
 impl_primitive_numbers!(u32, 0);
 impl_primitive_numbers!(u64, 0);
+impl_primitive_numbers!(u128, 0);
 
 impl_primitive_numbers!(isize, 0);
 impl_primitive_numbers!(usize, 0);
