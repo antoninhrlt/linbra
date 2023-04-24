@@ -91,7 +91,7 @@ impl<T: Zero, const C: usize, const R: usize> Matrix<T, C, R> {
     }
 }
 
-/// Returns the row at index `n` in the matrix.
+/// Returns the column at index `n` in the matrix.
 /// 
 /// ## Example
 /// ```
@@ -115,7 +115,7 @@ impl<T, const C: usize, const R: usize> ops::Index<usize> for Matrix<T, C, R> {
     }
 }
 
-/// Returns the row at index `n` in the matrix, as mutable.
+/// Returns the column at index `n` in the matrix, as mutable.
 /// 
 /// ## Example
 /// ```
