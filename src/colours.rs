@@ -47,7 +47,7 @@ impl Vector3<u8> {
 /// ## Example
 /// ```
 /// use linbra::{
-///     vectors::Vector3,
+///     vector::Vector3,
 ///     colours::RGB,
 /// };
 /// 
@@ -74,7 +74,7 @@ impl From<u32> for Vector3<u8> {
 /// ## Example
 /// ```
 /// use linbra::{
-///     vectors::Vector3,
+///     vector::Vector3,
 ///     colours::RGB,
 /// };
 /// 
@@ -115,7 +115,7 @@ impl Vector4<u8> {
 /// ## Example
 /// ```
 /// use linbra::{
-///     vectors::Vector4,
+///     vector::Vector4,
 ///     colours::{ RGB, RGBA },
 /// };
 /// 
@@ -145,7 +145,7 @@ impl From<u32> for Vector4<u8> {
 /// ## Example
 /// ```
 /// use linbra::{
-///     vectors::Vector4,
+///     vector::Vector4,
 ///     colours::RGBA,
 /// };
 /// 

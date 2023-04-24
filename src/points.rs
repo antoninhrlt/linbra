@@ -35,7 +35,7 @@ impl<T: Copy> Point2<T> for Vector3<T> {}
 /// ```
 /// use linbra::{
 ///     points::Point2,
-///     vectors::Vector2
+///     vector::Vector2
 /// };
 /// 
 /// let point = Vector2::at(10, 5);
@@ -67,7 +67,7 @@ impl<T: Copy> Point3<T> for Vector3<T> {}
 /// ```
 /// use linbra::{
 ///     points::{ Point2, Point3 },
-///     vectors::Vector3
+///     vector::Vector3
 /// };
 /// 
 /// let point = Vector3::at(10, 5, 2);

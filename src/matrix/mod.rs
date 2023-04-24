@@ -4,6 +4,7 @@
 
 //! Matrix types and functions to perform calculations on matrices.
 
+mod operations;
 mod matrix;
 pub use matrix::*;
 

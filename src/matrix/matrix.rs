@@ -42,9 +42,9 @@ impl<T: Zero, const C: usize, const R: usize> Matrix<T, C, R> {
     /// \end{pmatrix}
     /// $$
     /// ```
-    /// use linbra::matrices::{ Matrix, Matrix4 };
+    /// use linbra::matrix::{ Matrix, Matrix4 };
     /// 
-    /// let mut matrix = Matrix::<i32, 4, 3>::new([
+    /// let mut matrix = Matrix::<i32, 4, 3>::natural([
     ///     [10, 20, 30, 40],
     ///     [15, 25, 35, 45],
     ///     [17, 27, 37, 47],
@@ -77,7 +77,7 @@ impl<T: Zero, const C: usize, const R: usize> Matrix<T, C, R> {
     /// \end{pmatrix}
     /// $$
     /// ```
-    /// use linbra::matrices::{ Matrix, Matrix4 };
+    /// use linbra::matrix::{ Matrix, Matrix4 };
     /// 
     /// let mut matrix = Matrix::<i32, 4, 3>::new([
     ///     [10, 15, 17],
@@ -95,9 +95,9 @@ impl<T: Zero, const C: usize, const R: usize> Matrix<T, C, R> {
 /// 
 /// ## Example
 /// ```
-/// use linbra::matrices::{ Matrix, Matrix4 };
+/// use linbra::matrix::{ Matrix, Matrix4 };
 /// 
-/// let matrix4 = Matrix4::<f32>::new([
+/// let matrix4 = Matrix4::<f32>::natural([
 ///     [1.0, 1.0, 1.0, 0.0],
 ///     [0.0, 1.0, 0.0, 1.0],
 ///     [1.0, 0.0, 0.0, 1.0],
@@ -119,7 +119,7 @@ impl<T, const C: usize, const R: usize> ops::Index<usize> for Matrix<T, C, R> {
 /// 
 /// ## Example
 /// ```
-/// use linbra::matrices::{ Matrix, Matrix4 };
+/// use linbra::matrix::{ Matrix, Matrix4 };
 /// 
 /// let mut matrix4 = Matrix4::<f32>::new([
 ///     [1.0, 0.0, 1.0, 0.0],

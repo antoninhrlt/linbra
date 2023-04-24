@@ -10,6 +10,11 @@
 //! - vectors addition (vector1 + vector 2)
 //! - vectors subtraction (vector1 - vector 2)
 
+use crate::{ Num, Zero };
+use crate::vector::Vector;
+
+use std::ops::{ Add, Sub, Mul, MulAssign };
+
 /// Implementation for scalar product
 /// 
 /// ## Formula
@@ -46,7 +51,7 @@
 /// $$
 /// 
 /// ```
-/// use linbra::vectors::Vector2;
+/// use linbra::vector::Vector2;
 /// 
 /// let v = Vector2::new([5, 8]);
 /// assert_eq!(v * 2, Vector2::new([10, 16]));
@@ -113,14 +118,14 @@ impl<T: Zero + Num + MulAssign<U>, U: Num, const N: usize> Mul<U> for Vector<T, 
 /// $$
 /// 
 /// ```
-/// use linbra::vectors::Vector2;
+/// use linbra::vector::Vector2;
 /// 
-/// let vector1 = Vector2::new([2, 3]);
-/// let vector2 = Vector2::new([5, 8]);
+/// let vecA = Vector2::new([2, 3]);
+/// let vecB = Vector2::new([5, 8]);
 ///
-/// assert_eq!(vector1 * vector2, Vector2::new([10, 24]));
+/// assert_eq!(vecA * vecB, Vector2::new([10, 24]));
 /// ```
-impl<T: Zero + Num + MulAssign<Self>, const N: usize> Mul<Self> for Vector<T, N> {
+impl<T: Zero + Num, const N: usize> Mul<Self> for Vector<T, N> {
     type Output = Self;
 
     fn mul(self, rhs: Self) -> Self::Output {
@@ -134,7 +139,7 @@ impl<T: Zero + Num + MulAssign<Self>, const N: usize> Mul<Self> for Vector<T, N>
     }
 }
 
-/// Implementation vectors addition.
+/// Implementation for vectors addition.
 /// 
 /// ## Formula
 /// $$
@@ -184,7 +189,7 @@ impl<T: Zero + Num + MulAssign<Self>, const N: usize> Mul<Self> for Vector<T, N>
 /// $$
 /// 
 /// ```
-/// use linbra::vectors::Vector3;
+/// use linbra::vector::Vector3;
 /// 
 /// let vector1 = Vector3::new([5, 8, 2]);
 /// let vector2 = Vector3::new([3, 1, 2]);
@@ -258,7 +263,7 @@ impl<T: Zero + Num, const N: usize> Add<Self> for Vector<T, N> {
 /// 
 /// ## Example
 /// ```
-/// use linbra::vectors::Vector3;
+/// use linbra::vector::Vector3;
 /// 
 /// let vector1 = Vector3::new([5, 8, 2]);
 /// let vector2 = Vector3::new([3, 1, 2]);
