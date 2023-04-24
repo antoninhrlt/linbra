@@ -26,7 +26,20 @@ pub struct Vector<T, const N: usize> {
 }
 
 impl<T, const N: usize> Vector<T, N> {
-    /// Creates a new vector.
+    /// Creates a new vector. 
+    /// 
+    /// ## Example
+    /// $$
+    /// \begin{pmatrix} 
+    ///     5 \\\ 
+    ///     10 \\\ 
+    /// \end{pmatrix}
+    /// $$
+    /// ```
+    /// use linbra::vector::Vector;
+    /// 
+    /// let vec = Vector::<i32, 2>::new([5, 10]);
+    /// ```
     pub fn new(data: [T; N]) -> Self {
         Self { data }
     }
@@ -36,7 +49,7 @@ impl<T, const N: usize> Vector<T, N> {
 /// 
 /// ## Example
 /// ```
-/// use linbra::vectors::Vector;
+/// use linbra::vector::Vector;
 /// 
 /// let vec: Vector<u8, 6> = [8, 9, 10, 11, 12, 13].into();
 /// assert_eq!(vec, Vector::<u8, 6>::new([8, 9, 10, 11, 12, 13]));
@@ -53,7 +66,7 @@ impl<T, const N: usize> From<[T; N]> for Vector<T, N> {
 /// 
 /// ## Usage
 /// ```
-/// use linbra::vectors::{ Vector, Vector3 };
+/// use linbra::vector::{ Vector, Vector3 };
 /// 
 /// let colour: Vector3<u8> = Vector::new([255, 100, 100]);
 /// let red = colour[0];
@@ -72,7 +85,7 @@ impl<T, const N: usize> ops::Index<usize> for Vector<T, N> {
 /// 
 /// ## Usage
 /// ```
-/// use linbra::vectors::{ Vector, Vector3 };
+/// use linbra::vector::{ Vector, Vector3 };
 /// 
 /// let mut colour: Vector3<u8> = Vector::new([255, 100, 100]);
 /// colour[0] = 100;
