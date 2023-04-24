@@ -4,7 +4,7 @@
 
 #[test]
 fn no_implementation() {
-    use linbra::vectors::Vector3;
+    use linbra::vector::Vector3;
  
     let colour: Vector3<u8> = [255, 100, 100].into();
  
@@ -15,7 +15,7 @@ fn no_implementation() {
 #[test]
 fn implementation() {
     use linbra::{
-        vectors::Vector3,
+        vector::Vector3,
         colours::RGB,
     };
  

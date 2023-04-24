@@ -7,7 +7,7 @@ fn same_getters() {
     use linbra::{
         colours::RGB,
         points::{ Point2, Point3 },
-        vectors::Vector3,
+        vector::Vector3,
     };
 
     let vec3 = Vector3::<u8>::new([10, 5, 2]);
@@ -23,7 +23,7 @@ fn same_into() {
     use linbra::{
         colours::RGB,
         points::{ Point2, Point3 },
-        vectors::Vector3,
+        vector::Vector3,
     };
 
     let vec3: Vector3<u8> = [10, 5, 2].into();
