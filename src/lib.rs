@@ -5,9 +5,8 @@
 //! Easily do linear algebra in game development, graphics and other sort of 
 //! calculations using vectors and matrices.
 //! 
-//! Every implementation, function or item is documented mathematically and 
-//! programmatically. Browses the items and their functions to learn how to use 
-//! them!
+//! Every implementation, function or item is documented mathematically and for 
+//! programming. Browses the items and their functions to learn how to use them!
 //! 
 //! ## Overview
 //! - Objects:
