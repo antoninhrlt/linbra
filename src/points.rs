@@ -23,10 +23,10 @@ pub trait Point2<T: Copy>: ops::Index<usize, Output = T> {
     }
 }
 
-/// Implements the [`Point2`] trait for 2-vectors.
+/// Implements the [`Point2`] trait for vectors 2.
 impl<T: Copy> Point2<T> for Vector2<T> {}
 
-/// Implements the [`Point3`] trait for 3-vectors.
+/// Implements the [`Point2`] trait for vectors 3.
 impl<T: Copy> Point2<T> for Vector3<T> {}
 
 /// Implements a constructor for 2d-points.
