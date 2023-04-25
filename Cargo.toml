@@ -2,7 +2,7 @@
 name = "linbra"
 description = "Easily do linear algebra in game development, graphics and other sorts of calculations using vectors and matrices"
 authors = ["Antonin Hérault <antonherault@gmail.com>"]
-version = "0.0.2"
+version = "0.0.3"
 edition = "2021"
 license = "MIT"
 keywords = ["algebra", "graphics", "gamedev", "maths", "linear-algebra"]
